@@ -56,6 +56,7 @@ window.addEventListener('DOMContentLoaded', function(){
   showPerson();
 }) 
 
+// Shows Reviews start with 0
 function showPerson(){
   const item = reviews[currentItem];
   img.src = item.img
@@ -84,6 +85,14 @@ nextBtn.addEventListener('click', function(){
 
 //  Suprise Btn i.e randomly show review
 randomBtn.addEventListener('click', function(){
-  Math.floor()
+  // Current review on which user is -
+  lastRandowmNum = currentItem;
+  // Choose a random number which is not = to previous review
+  do {
+    currentItem = Math.floor(Math.random() * reviews.length);
+  }
+  while (currentItem === lastRandowmNum)
+
+  showPerson(currentItem);
 })
 
